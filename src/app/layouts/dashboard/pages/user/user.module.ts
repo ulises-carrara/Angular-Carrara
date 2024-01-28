@@ -30,6 +30,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatButtonModule,
     ReactiveFormsModule,
     SharedModule,
+    
   ], 
   exports:[
     UserComponent

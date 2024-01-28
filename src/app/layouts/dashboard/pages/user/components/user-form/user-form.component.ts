@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -14,6 +15,8 @@ export class UserFormComponent {
 
   @Output()
   userSubmite = new EventEmitter()//output se usa para transmitir info desde un componente hijo a un componente padre  por ej eluser-form-component es el hijo y el user-component es el padre
+
+ 
 
   constructor(private fb: FormBuilder) {
     this.userForm = this.fb.group({
