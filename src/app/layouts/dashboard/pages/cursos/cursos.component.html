@@ -1,17 +1,55 @@
-<p>cursos works!</p>
+<h1 appTitle class="col-12 flex justify-content-center">Cursos</h1>
 
-<table mat-table  class="mat-elevation-z8">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+<div class="p-3 m-3 flex justify-content-center">
+    <button mat-button color="primary" (click)="onCreate()" class="w-20rem">Agregar</button>
+</div>
+
+
+
+<table mat-table [dataSource]='cursos' class="mat-elevation-z8">
+
+    
 
     <!-- Position Column -->
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
-    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechainicio | date: 'dd/mm/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="duracion">
+        <th mat-header-cell *matHeaderCellDef> Duracion </th>
+        <td mat-cell *matCellDef="let element"> {{element.duracion}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+
+            <button (click)="onEdit(element)" mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                <mat-icon>edit</mat-icon>
+            </button>
+
+
+
+            <button (click)="onDelete(element.id)" color="warn" mat-icon-button aria-label="Example icon button with a menu icon">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </td>
+    </ng-container>
 
 
 

@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import {MatListModule} from '@angular/material/list';
+import { CursosModule } from './pages/cursos/cursos.module';
 @NgModule({
   declarations: [
     DashboardComponent
@@ -24,6 +25,7 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     UserModule,
     MatListModule,
+    CursosModule,
     RouterModule.forChild([
 
       {
@@ -36,7 +38,8 @@ import {MatListModule} from '@angular/material/list';
       },
       {
         path: 'cursos',
-        component: CursosComponent
+        component: CursosComponent,
+        loadChildren:()=>import('./pages/cursos/cursos.module').then((m)=>(m.CursosModule))
       },
 
 
