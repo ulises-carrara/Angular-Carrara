@@ -1,1 +1,55 @@
-<p>auth works!</p>
+<div class="login-container">
+    <mat-card class="card">
+
+        <mat-card-header class="flex align-items-center justify-content-center">
+            <mat-card-title class="title-card mb-2 ">Iniciar secion</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <!--(ngSubmit)="onSubmit()"-->
+            <form  [formGroup]="loginForm" class="grid formgrid">
+
+                <div class="col-12">
+
+                    <mat-form-field class="w-full">
+                        <mat-label>E-mail</mat-label>
+                        <input formControlName="email" matInput />
+                        <mat-error>
+                            {{loginForm.get('email')?.errors | validatorError}}
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-12">
+
+                    <mat-form-field class="w-full">
+                        <mat-label>Contraseña</mat-label>
+                        <input 
+                        [type]="revealPassword ? 'text' : 'password'"
+                        formControlName="contraseña"
+                        matInput 
+
+                        />
+
+
+                        <button 
+                        (click)="revealPassword = !revealPassword"
+                        matSuffix 
+                        mat-icon-button>
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-12">
+                    <button (click)="onSubmit()" class="w-full" mat-raised-button>Ingresar</button>
+                </div>
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>

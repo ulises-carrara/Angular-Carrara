@@ -23,7 +23,7 @@ import { CursosModule } from './pages/cursos/cursos.module';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    UserModule,
+    UserModule, 
     MatListModule,
     CursosModule,
     RouterModule.forChild([

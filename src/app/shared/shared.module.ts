@@ -13,12 +13,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { ValidatorErrorPipe } from './validator-error.pipe';
 
 
 @NgModule({
   declarations: [
     FullNamePipe,
-    TitleDirective
+    TitleDirective,
+    ValidatorErrorPipe
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatDialogModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatCardModule,
+    ValidatorErrorPipe,
+    
     
   ]
 })
